@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-export default function NavigationBar() {
-  const [inputValue, changeInputOfValue] = useState("");
-
-  const handleInput = (event) => {
-    changeInputOfValue(event.target.value);
-  };
-
+export default function NavigationBar({ handleInput }) {
   return (
     <div className="navigation-bar-container">
       <InputGroup
@@ -26,7 +20,6 @@ export default function NavigationBar() {
           onChange={handleInput}
         />
       </InputGroup>
-      <h2>{inputValue}</h2>
     </div>
   );
 }
