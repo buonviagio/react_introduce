@@ -1,3 +1,14 @@
+/* Structure of the page */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ContainerOfCards takes up whole space */
+.page-container > div:nth-child(2) {
+  flex: 1;
+}
 /* Nav Bar*/
 
 .navigation-bar-container {
@@ -94,3 +105,42 @@
 .container-of-modal-window {
   width: 400px;
 }
+
+/* Footer */
+.footer-container {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container-of-arrows {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.arrow-back,
+.arrow-forward {
+  color: #a8004e;
+  font-size: 24px;
+}
+
+.button-back,
+.button-forward {
+  color: #a8004e;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.button-back:disabled,
+.button-forward:disabled {
+  color: gray;
+}
+
+/* The end of the footer */

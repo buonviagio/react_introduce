@@ -1,15 +1,16 @@
 import Button from "react-bootstrap/Button";
 import ModalWindow from "./ModalWindow";
 import { useState } from "react";
+import Card from "react-bootstrap/Card";
 
-const Card = ({ character }) => {
+const Cards = ({ character }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
   const handleShow = () => setShow(true);
 
   return (
-    <>
+    <Card className="text-center" style={{ border: "none" }}>
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
@@ -20,7 +21,10 @@ const Card = ({ character }) => {
             />
           </div>
           <div className="flip-card-back">
-            <h2>{character.name}</h2>
+            {/* <h2>{character.name}</h2> */}
+            <Card.Title style={{ marginTop: "30px" }}>
+              {character.name}
+            </Card.Title>
             <p>
               <Button
                 variant="link"
@@ -38,8 +42,8 @@ const Card = ({ character }) => {
         handleClose={handleClose}
         character={character}
       />
-    </>
+    </Card>
   );
 };
 
-export default Card;
+export default Cards;
